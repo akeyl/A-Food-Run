@@ -1,25 +1,69 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jNA-Tv-eY0">
+                                <rect key="frame" x="20" y="432" width="374" height="170"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="170" id="NWE-xL-7D4"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YqP-eA-Z6k">
+                                <rect key="frame" x="20" y="50" width="374" height="374"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PjH-Gj-wl4">
+                                <rect key="frame" x="111" y="636" width="192" height="30"/>
+                                <state key="normal" title="Use Magic!">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="startStopReading:" destination="BYZ-38-t0r" eventType="touchUpInside" id="8ed-mj-q5a"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.18617064790575921" green="0.18617064790575921" blue="0.18617064790575921" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="PjH-Gj-wl4" firstAttribute="top" secondItem="jNA-Tv-eY0" secondAttribute="bottom" constant="34" id="2bk-D6-d0g"/>
+                            <constraint firstItem="YqP-eA-Z6k" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="7pT-AQ-nkb"/>
+                            <constraint firstItem="jNA-Tv-eY0" firstAttribute="top" secondItem="YqP-eA-Z6k" secondAttribute="bottom" constant="8" symbolic="YES" id="A01-q7-nCA"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="PjH-Gj-wl4" secondAttribute="bottom" constant="70" id="H3w-8d-6Qh"/>
+                            <constraint firstItem="PjH-Gj-wl4" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="91" id="Q9w-2X-4uW"/>
+                            <constraint firstItem="PjH-Gj-wl4" firstAttribute="centerX" secondItem="jNA-Tv-eY0" secondAttribute="centerX" id="j0n-op-5x5"/>
+                            <constraint firstItem="jNA-Tv-eY0" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="s9n-ei-q3N"/>
+                            <constraint firstItem="YqP-eA-Z6k" firstAttribute="leading" secondItem="jNA-Tv-eY0" secondAttribute="leading" id="toZ-Ut-wdY"/>
+                            <constraint firstItem="YqP-eA-Z6k" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="30" id="u9v-Bs-JAy"/>
+                            <constraint firstItem="YqP-eA-Z6k" firstAttribute="trailing" secondItem="jNA-Tv-eY0" secondAttribute="trailing" id="xEP-YR-ZmS"/>
+                        </constraints>
                     </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
+                    <connections>
+                        <outlet property="bbitemStart" destination="PjH-Gj-wl4" id="2VH-NZ-NIe"/>
+                        <outlet property="lblStatus" destination="jNA-Tv-eY0" id="THM-NC-Fix"/>
+                        <outlet property="viewPreview" destination="YqP-eA-Z6k" id="TcI-oj-lDY"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="380" y="315"/>
         </scene>
     </scenes>
 </document>
